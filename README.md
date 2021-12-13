@@ -22,9 +22,13 @@
 > 密码是初始化时显示的密码
 - 解决`ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using passwor)`
 > 找到MySQL的配置文件my.cnf，然后在里面找到`[mysqld]`这一项，然后在该配置项下添加`skip-grant-tables`
-### 修改默认密码
+### 修改默认密码(使用root用户)
 - `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '新密码';`
 - 解决`ERROR 1290 (HY000): The MySQL server is running with the --skip-grant-tables option so it cannot execute this statement`
 > 执行`flush privileges;`命令
-### 添加用户
+### 添加用户(使用root用户)
 `create user '新用户名' identified by '新用户密码';`
+### 创建数据库(使用root用户)
+`create database 数据库名;`
+### 给用户授权(使用root用户)
+`grant select,insert,update,delete,create on [数据库名称].* to [用户名称]@'%';`
