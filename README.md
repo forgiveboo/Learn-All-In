@@ -22,7 +22,7 @@
 - 解决`ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using passwor)`
 > 找到MySQL的配置文件my.cnf，然后在里面找到`[mysqld]`这一项，然后在该配置项下添加`skip-grant-tables`
 ### 修改默认密码
-- `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '新密码';`
+- `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';`
 - 解决`ERROR 1290 (HY000): The MySQL server is running with the --skip-grant-tables option so it cannot execute this statement`
 > 执行`flush privileges;`命令
 ### 添加用户
