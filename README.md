@@ -36,6 +36,7 @@
 - 以root用户连接数据库`mycli -u root`
 ### 查询所有数据库
 `show databases;`
+![所有库](https://github.com/forgiveboo/MySQL-Learn/blob/main/screenshots/%E6%89%80%E6%9C%89%E5%BA%93.png)
 ### 创建数据库
 `create database database_name;`
 ### 使用数据库
