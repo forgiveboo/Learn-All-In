@@ -1,7 +1,6 @@
-## MySQL学习记录
-### Arch下安装MySQL
+## Arch下安装MySQL
 `sudo pacman -S mysql`
-### 初始化MySQL
+## 初始化MySQL
 - `sudo mysqld --initialize --user=mysql --basedir=/usr --datadir=/var/lib/mysql`
 - 执行结果：
 ```
@@ -22,13 +21,32 @@
 > 密码是初始化时显示的密码
 - 解决`ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using passwor)`
 > 找到MySQL的配置文件my.cnf，然后在里面找到`[mysqld]`这一项，然后在该配置项下添加`skip-grant-tables`
-### 修改默认密码(使用root用户)
+### 修改默认密码
 - `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '新密码';`
 - 解决`ERROR 1290 (HY000): The MySQL server is running with the --skip-grant-tables option so it cannot execute this statement`
 > 执行`flush privileges;`命令
-### 添加用户(使用root用户)
-`create user '新用户名' identified by '新用户密码';`
-### 创建数据库(使用root用户)
-`create database 数据库名;`
-### 给用户授权(使用root用户)
-`grant select,insert,update,delete,create on [数据库名称].* to [用户名称]@'%';`
+### 添加用户
+`create user 'username' identified by 'password';`
+### 创建数据库
+`create database database_name;`
+### 给用户授权
+`grant select,insert,update,delete,create on database_name.* to username@'%';`
+## 使用MySQL
+- 安装MySQL命令行客户端`pip install mycli`
+- 以root用户连接数据库`mycli -u root`
+### 查询所有数据库
+`show databases;`
+### 创建数据库
+`create database database_name;`
+### 使用数据库
+`use 数据库名;`
+### 查询所有用户
+`select user from mysql.user`
+### 创建表
+- 以普通用户连接数据库`mycli -u username;`
+- 选择要创建表的数据库`use database_name;`
+- 在该数据库中创建表`create table table_name (column_name column_type);`
+### 查询表结构
+`desc table_name;`
+### 查看当前数据库中所有表
+`show tables`
