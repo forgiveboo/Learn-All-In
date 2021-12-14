@@ -36,6 +36,7 @@
 - 以root用户连接数据库`mycli -u root`
 ### 查询所有数据库
 `show databases;`
+
 ![所有库](https://github.com/forgiveboo/MySQL-Learn/blob/main/screenshots/%E6%89%80%E6%9C%89%E5%BA%93.png)
 ### 创建数据库
 `create database database_name;`
@@ -43,6 +44,7 @@
 `use 数据库名;`
 ### 查询所有用户
 `select user from mysql.user`
+
 ![所有用户](https://github.com/forgiveboo/MySQL-Learn/blob/main/screenshots/%E6%9F%A5%E8%AF%A2%E7%94%A8%E6%88%B7.png)
 ### 创建表
 - 以普通用户连接数据库`mycli -u username;`
@@ -50,7 +52,9 @@
 - 在该数据库中创建表`create table table_name (column_name column_type);`
 ### 查询表结构
 `desc table_name;`
+
 ![表结构](https://github.com/forgiveboo/MySQL-Learn/blob/main/screenshots/%E6%9F%A5%E7%9C%8B%E8%A1%A8%E7%BB%93%E6%9E%84.png)
 ### 查看当前数据库中所有表
 `show tables`
+
 ![所有表](https://github.com/forgiveboo/MySQL-Learn/blob/main/screenshots/%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E8%A1%A8.png)
