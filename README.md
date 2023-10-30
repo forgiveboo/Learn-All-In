@@ -1,3 +1,4 @@
+# MySQL
 ## Arch下安装MySQL
 `sudo pacman -S mysql`
 ## 初始化MySQL
@@ -58,3 +59,6 @@
 `show tables`
 
 ![所有表](https://github.com/forgiveboo/MySQL-Learn/blob/main/screenshots/%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E8%A1%A8.png)
+
+# ArchLinux
+
